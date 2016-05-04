@@ -19,8 +19,9 @@ con.connect(function (err) {
 //console.log('continues');
 
 // 查询语句
-con.query('select * from employees', function (err, rows) {
+con.query('select * from employees', function (err, rows, fields) {
     if (err) throw err;
+    console.log(fields);
     console.log('Data received from DB:\n');
     for (var i = 0; i < rows.length; i++) {
         console.log(rows[i].id);
